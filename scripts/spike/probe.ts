@@ -26,7 +26,7 @@ const shapeGids = (text: string) => {
 const iso = shapeGids('ب')[0]!;
 const two = shapeGids('بب'); // visual: [final, initial]
 const three = shapeGids('ببب'); // visual: [final, medial, initial]
-const forms = { isolated: iso, initial: two[1], medial: three[1], final: two[0] };
+const forms = { isolated: iso, initial: two[1]!, medial: three[1]!, final: two[0]! };
 results.harfbuzz = {
   forms,
   distinct: new Set(Object.values(forms)).size,
