@@ -12,10 +12,15 @@
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "gen": "tsx scripts/gen.ts",
+    "qa:art": "tsx scripts/qa/art-qa.ts",
+    "gates": "tsx scripts/qa/content-gates.ts",
+    "check:dist": "tsx scripts/qa/check-dist.ts",
     "typecheck": "tsc --noEmit && astro check",
     "lint": "biome check .",
     "test": "vitest run",
-    "e2e": "playwright test"
+    "e2e": "playwright test",
+    "lhci": "lhci autorun",
+    "verify": "pnpm lint && pnpm typecheck && pnpm test && pnpm gen build && pnpm gen derive && pnpm gen bundles && pnpm qa:art && pnpm gates && pnpm build && pnpm check:dist && pnpm e2e"
   },
   "dependencies": {
     "@astrojs/mdx": "8.0.3",
@@ -42,6 +47,7 @@
     "fake-indexeddb": "6.2.5",
     "harfbuzzjs": "1.6.3",
     "html-validate": "11.16.2",
+    "lucide-static": "1.56.0",
     "pagefind": "1.5.2",
     "pdf-lib": "1.17.1",
     "pdfjs-dist": "6.4.299",
@@ -49,6 +55,7 @@
     "sharp": "0.35.5",
     "svgo": "4.1.0",
     "tailwindcss": "4.3.3",
+    "tinyglobby": "0.2.17",
     "tsx": "4.23.15",
     "typescript": "6.0.3",
     "vitest": "5.0.4",
