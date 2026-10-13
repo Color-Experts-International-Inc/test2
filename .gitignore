@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+.kci/
+public/files/
+worker/generated/
+.wrangler/
+test-results/
+playwright-report/
+.lighthouseci/
+*.log
+.DS_Store
+.env
+.env.*
